@@ -89,10 +89,21 @@ public class Frontend {
 
     public static void Chatroom(){
     JFrame Chattingscreen = new JFrame("Chaty");
-    Chattingscreen.setBounds(0,0,500,1000);
+    Chattingscreen.setBounds(0,0,1000,1000);
     Chattingscreen.setResizable(false);
     Chattingscreen.setLocationRelativeTo(null);
+    Chattingscreen.setLayout(null);
     Chattingscreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    JPanel OnlinePanel = new JPanel();
+    OnlinePanel.setBounds(0,0,300,1000);
+    OnlinePanel.setBackground(Color.GRAY);
+    OnlinePanel.setLayout(null);
+    Chattingscreen.add(OnlinePanel);
+
+    JLabel OnlineLogo = new JLabel(new ImageIcon("src/Image/Online User.png"));
+    OnlineLogo.setBounds(-100,-50,500,200);
+    OnlinePanel.add(OnlineLogo);
 
     Chattingscreen.setVisible(true);
     }
