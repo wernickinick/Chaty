@@ -1,3 +1,5 @@
+import com.sun.tools.javac.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -7,6 +9,7 @@ public class Frontend {
 
     private final static int Width = 500;      //Width and Height for Jpanel and Jframe
     private final static int Height = 1000;
+    public static int check;
 
     public static void Main_Window(){
         JFrame Main = new JFrame("Chaty");
@@ -52,6 +55,13 @@ public class Frontend {
         Error.setVisible(false);
         Username.setVisible(true);
 
+        JPanel Online = new JPanel();
+        Online.setBounds(0,0,200,1000);
+        Online.setBackground(Color.cyan);
+        Online.setVisible(true);
+
+
+
         //Method to see if add a username and checks if username is not there
         Enter.addActionListener(new ActionListener() {
             @Override
@@ -65,12 +75,25 @@ public class Frontend {
                     Error.setVisible(true);
                 }
                 else {
+                    check = 70;
                     Welcome.setVisible(false);
+                    Main.setVisible(false);
                     Error.dispose();
+                    Chatroom();
                 }
             }
         });
 
         Main.setVisible(true);
+    }
+
+    public static void Chatroom(){
+    JFrame Chattingscreen = new JFrame("Chaty");
+    Chattingscreen.setBounds(0,0,500,1000);
+    Chattingscreen.setResizable(false);
+    Chattingscreen.setLocationRelativeTo(null);
+    Chattingscreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    Chattingscreen.setVisible(true);
     }
 }
