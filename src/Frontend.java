@@ -96,20 +96,31 @@ public class Frontend {
 
     JPanel OnlinePanel = new JPanel();
     OnlinePanel.setBounds(0,0,300,1000);
-    OnlinePanel.setBackground(Color.GRAY);
+    OnlinePanel.setBackground(new Color(186,171,146));
     OnlinePanel.setLayout(null);
     Chattingscreen.add(OnlinePanel);
+
+    JPanel TextArea = new JPanel();
+    TextArea.setBounds(300,0,700,1000);
+    TextArea.setBackground(new Color(105,162,168));
+    TextArea.setLayout(null);
+    Chattingscreen.add(TextArea);
+
+    JLabel Logo = new JLabel(new ImageIcon("src/Image/Logo.png"));
+    Logo.setBounds(-100,630,500,400);
+    OnlinePanel.add(Logo);
 
     JLabel OnlineLogo = new JLabel(new ImageIcon("src/Image/Online User.png"));
     OnlineLogo.setBounds(-100,-50,500,200);
     OnlinePanel.add(OnlineLogo);
 
-    JLabel OnlineUser = new JLabel(User);
-    OnlineUser.setBounds(100,100,100,100);//have to add size and font
+    JLabel OnlineUser = new JLabel(User,SwingConstants.CENTER);
+    OnlineUser.setBounds(0,100,300,100);
+    OnlineUser.setFont(new Font("Klose Slab",Font.BOLD,30));
     OnlinePanel.add(OnlineUser);
 
     online.add(User);
-    System.out.println(online + "Is Online");
+    System.out.println(online + " Is Online");
 
     Chattingscreen.setVisible(true);
     }
