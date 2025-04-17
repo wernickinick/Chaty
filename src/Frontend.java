@@ -1,15 +1,16 @@
-import com.sun.tools.javac.Main;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 public class Frontend {
 
     private final static int Width = 500;      //Width and Height for Jpanel and Jframe
     private final static int Height = 1000;
     public static int check;
+    public static String User;
+    public static ArrayList<String> online = new ArrayList<>();
 
     public static void Main_Window(){
         JFrame Main = new JFrame("Chaty");
@@ -60,18 +61,16 @@ public class Frontend {
         Online.setBackground(Color.cyan);
         Online.setVisible(true);
 
-
-
         //Method to see if add a username and checks if username is not there
         Enter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String user = Username.getText();
-                if(user.isEmpty())
+                User = Username.getText();
+                if(User.isEmpty())
                 {
                     Error.setVisible(true);
                 }
-                else if (user.equals("Must Enter Username to Join")){
+                else if (User.equals("Must Enter Username to Join")){
                     Error.setVisible(true);
                 }
                 else {
@@ -104,6 +103,13 @@ public class Frontend {
     JLabel OnlineLogo = new JLabel(new ImageIcon("src/Image/Online User.png"));
     OnlineLogo.setBounds(-100,-50,500,200);
     OnlinePanel.add(OnlineLogo);
+
+    JLabel OnlineUser = new JLabel(User);
+    OnlineUser.setBounds(100,100,100,100);//have to add size and font
+    OnlinePanel.add(OnlineUser);
+
+    online.add(User);
+    System.out.println(online + "Is Online");
 
     Chattingscreen.setVisible(true);
     }
