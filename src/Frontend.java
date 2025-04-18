@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-
 public class Frontend {
 
     private final static int Width = 500;      //Width and Height for Jpanel and Jframe
@@ -27,6 +26,7 @@ public class Frontend {
 
         JTextField Username = new JTextField("Must Enter Username to Join");
         Username.setBounds(100,300,300,50);
+        Username.setFont(new Font("Klose Slab",Font.BOLD,15));
         Username.setLayout(null);
         Welcome.add(Username);
 
@@ -105,6 +105,33 @@ public class Frontend {
     TextArea.setBackground(new Color(105,162,168));
     TextArea.setLayout(null);
     Chattingscreen.add(TextArea);
+
+    JTextArea MessageArea = new JTextArea();
+    MessageArea.setBounds(50,50,600,750);
+    MessageArea.setBackground(new Color(111,168,174));
+    MessageArea.setFont(new Font("Klose Slab",Font.PLAIN,30));
+    TextArea.add(MessageArea);
+
+    JTextField Text = new JTextField("");
+    Text.setBounds(80,825,500,50);
+    Text.setFont(new Font("Klose Slab",Font.PLAIN,20));
+    TextArea.add(Text);
+
+    JButton SendMessage = new JButton("↑");
+    SendMessage.setFont(new Font("Ariel",Font.PLAIN,40));
+    SendMessage.setBounds(580,825,50,50);
+    TextArea.add(SendMessage);
+
+    SendMessage.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String message = Text.getText();
+            if(!message.isEmpty()){
+                MessageArea.append(User + ": " + message);
+                Text.setText("");
+            }
+        }
+    });
 
     JLabel Logo = new JLabel(new ImageIcon("src/Image/Logo.png"));
     Logo.setBounds(-100,630,500,400);
