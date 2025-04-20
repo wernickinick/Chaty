@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Frontend {
 
     private final static int Width = 500;      //Width and Height for Jpanel and Jframe
-    private final static int Height = 1000;
+    private final static int Height = 800;
     public static int check;
     public static String User;
     public static ArrayList<String> online = new ArrayList<>();
@@ -88,38 +88,38 @@ public class Frontend {
 
     public static void Chatroom(){
     JFrame Chattingscreen = new JFrame("Chaty");
-    Chattingscreen.setBounds(0,0,1000,1000);
+    Chattingscreen.setBounds(0,0,1000,800);
     Chattingscreen.setResizable(false);
     Chattingscreen.setLocationRelativeTo(null);
     Chattingscreen.setLayout(null);
     Chattingscreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     JPanel OnlinePanel = new JPanel();
-    OnlinePanel.setBounds(0,0,300,1000);
+    OnlinePanel.setBounds(0,0,300,800);
     OnlinePanel.setBackground(new Color(186,171,146));
     OnlinePanel.setLayout(null);
     Chattingscreen.add(OnlinePanel);
 
     JPanel TextArea = new JPanel();
-    TextArea.setBounds(300,0,700,1000);
+    TextArea.setBounds(300,0,700,800);
     TextArea.setBackground(new Color(105,162,168));
     TextArea.setLayout(null);
     Chattingscreen.add(TextArea);
 
     JTextArea MessageArea = new JTextArea();
-    MessageArea.setBounds(50,50,600,750);
+    MessageArea.setBounds(50,50,600,600);
     MessageArea.setBackground(new Color(111,168,174));
     MessageArea.setFont(new Font("Klose Slab",Font.PLAIN,30));
     TextArea.add(MessageArea);
 
     JTextField Text = new JTextField("");
-    Text.setBounds(80,825,500,50);
+    Text.setBounds(80,675,500,50);
     Text.setFont(new Font("Klose Slab",Font.PLAIN,20));
     TextArea.add(Text);
 
     JButton SendMessage = new JButton("↑");
     SendMessage.setFont(new Font("Ariel",Font.PLAIN,40));
-    SendMessage.setBounds(580,825,50,50);
+    SendMessage.setBounds(580,675,50,50);
     TextArea.add(SendMessage);
 
     SendMessage.addActionListener(new ActionListener() {
@@ -134,7 +134,7 @@ public class Frontend {
     });
 
     JLabel Logo = new JLabel(new ImageIcon("src/Image/Logo.png"));
-    Logo.setBounds(-100,630,500,400);
+    Logo.setBounds(-100,425,500,400);
     OnlinePanel.add(Logo);
 
     JLabel OnlineLogo = new JLabel(new ImageIcon("src/Image/Online User.png"));
