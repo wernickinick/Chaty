@@ -127,7 +127,7 @@ public class Frontend {
         public void actionPerformed(ActionEvent e) {
             String message = Text.getText();
             if(!message.isEmpty()){
-                MessageArea.append(User + ": " + message);
+                MessageArea.append(User + ": " + message + "\n");
                 Text.setText("");
             }
         }
