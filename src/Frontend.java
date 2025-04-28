@@ -148,6 +148,7 @@ public class Frontend {
 
     online.add(User);
     System.out.println(online + " Is Online");
+    //Add intergration with backend/server
 
     Chattingscreen.setVisible(true);
     }
