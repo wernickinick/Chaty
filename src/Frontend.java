@@ -149,6 +149,7 @@ public class Frontend {
     online.add(User);
     System.out.println(online + " Is Online");
     //Add intergration with backend/server
+        //Still learning on for the backend just caught up with school 4-29-25
 
     Chattingscreen.setVisible(true);
     }
