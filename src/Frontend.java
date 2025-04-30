@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicListUI;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -110,6 +112,9 @@ public class Frontend {
     MessageArea.setBounds(50,50,600,600);
     MessageArea.setBackground(new Color(111,168,174));
     MessageArea.setFont(new Font("Klose Slab",Font.PLAIN,30));
+    MessageArea.setEditable(false);
+    MessageArea.setEnabled(false);
+    MessageArea.setLayout(null);
     TextArea.add(MessageArea);
 
     JTextField Text = new JTextField("");
@@ -126,6 +131,7 @@ public class Frontend {
         @Override
         public void actionPerformed(ActionEvent e) {
             String message = Text.getText();
+            Text.setForeground(Color.black);
             if(!message.isEmpty()){
                 MessageArea.append(User + ": " + message + "\n");
                 Text.setText("");
